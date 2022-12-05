@@ -5,6 +5,7 @@ const {
   personalRouter,
   userRouter,
   authRouter,
+  positionsRouter
 } = require('../modules/controller/routes');
 const app = express(); //Instanciar server
 app.set('port', process.env.PORT || 3000);
@@ -18,7 +19,7 @@ app.get('/', (request, response) => {
 app.use(`/api/personal`, personalRouter);
 app.use(`/api/user`, userRouter);
 app.use(`/api/auth`, authRouter);
-//app.use(`/api/position`, positionRouter);
+app.use(`/api/position`, positionsRouter);
 //app.use(`/api/user`, userRouter);
 module.exports = {
   app,
